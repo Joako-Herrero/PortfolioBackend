@@ -43,7 +43,7 @@ public class MainSecurity {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         
         corsConfiguration.setAllowedOrigins(List.of("**"));
-        corsConfiguration.setAllowedMethods(List.of("POST"));
+        corsConfiguration.setAllowedMethods(List.of("POST", "OPTIONS"));
         corsConfiguration.setAllowCredentials(true);
         corsConfiguration.setAllowedHeaders(List.of("*"));
         corsConfiguration.setMaxAge(3600L);
