@@ -32,7 +32,7 @@ public class MainSecurity {
              .csrf(csrf -> csrf.disable())
              .cors(httpSecurityCorsConfigurer -> httpSecurityCorsConfigurer.configurationSource(corsConfigurationSource()))
              .authorizeHttpRequests((authorize) -> authorize
-             .requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.OPTIONS,"/email/send")).permitAll()
+             //.requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.OPTIONS,"/email/send")).permitAll()
              .requestMatchers(AntPathRequestMatcher.antMatcher("/email/send")).permitAll()
              .anyRequest().authenticated()
              );
@@ -48,7 +48,7 @@ public class MainSecurity {
         
         corsConfiguration.setAllowedOrigins(List.of("*"));
         corsConfiguration.setAllowedMethods(List.of("POST", "OPTIONS"));
-        corsConfiguration.setAllowCredentials(true);
+        corsConfiguration.setAllowCredentials(false);
         corsConfiguration.setAllowedHeaders(List.of("*"));
         corsConfiguration.setMaxAge(3600L);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
