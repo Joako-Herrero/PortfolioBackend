@@ -40,6 +40,7 @@ public class MainSecurity {
     
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
+        System.out.println("Setting up CORS configuration...");
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         
         corsConfiguration.setAllowedOrigins(List.of("**"));
