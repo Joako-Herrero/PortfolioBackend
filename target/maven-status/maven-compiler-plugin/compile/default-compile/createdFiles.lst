@@ -1,0 +1,5 @@
+com\mjhportfolio\EmailController.class
+com\mjhportfolio\EmailRequest.class
+com\mjhportfolio\security\MainSecurity.class
+com\mjhportfolio\EmailSenderService.class
+com\mjhportfolio\PortfoliomjhApplication.class
