@@ -34,6 +34,7 @@ public class MainSecurity {
              .authorizeHttpRequests((authorize) -> authorize
              //.requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.OPTIONS,"/email/send")).permitAll()
              .requestMatchers(AntPathRequestMatcher.antMatcher("/email/send")).permitAll()
+             .requestMatchers(AntPathRequestMatcher.antMatcher("/email/live")).permitAll()
              .anyRequest().authenticated()
              );
             
@@ -47,7 +48,7 @@ public class MainSecurity {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         
         corsConfiguration.setAllowedOrigins(List.of("*"));
-        corsConfiguration.setAllowedMethods(List.of("POST", "OPTIONS"));
+        corsConfiguration.setAllowedMethods(List.of("GET","POST", "OPTIONS"));
         corsConfiguration.setAllowCredentials(false);
         corsConfiguration.setAllowedHeaders(List.of("*"));
         corsConfiguration.setMaxAge(3600L);
